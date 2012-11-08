@@ -1,6 +1,8 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+color freya  " 配色
+
 set guioptions-=T " 删除工具栏
 set tabstop=4 " 设置tab键的宽度
 set expandtab " 空格代替tab
