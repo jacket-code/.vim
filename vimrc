@@ -51,6 +51,14 @@ function! NERDTree_IsValid()
 endfunction
 
 "------------------------------------------------------
+"	taglist配置
+"------------------------------------------------------
+"map <F3> :silent! TlistToggle<CR> " 按下F3就可以呼出了，已经使用winManager整合
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_Show_One_File=1
+let TList_Exit_OnlyWindow=1 " 当taglist是最后一个分割窗口时，自动退出vim
+
+"------------------------------------------------------
 "	winManager配置
 "------------------------------------------------------
 let g:winManagerWindowLayout='NERDTree|TagList' ",BufExplorer [,]表示通过Ctrl+N切换，[|]表示直接显示
