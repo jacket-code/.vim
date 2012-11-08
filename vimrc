@@ -64,3 +64,16 @@ let TList_Exit_OnlyWindow=1 " 当taglist是最后一个分割窗口时，自动�
 let g:winManagerWindowLayout='NERDTree|TagList' ",BufExplorer [,]表示通过Ctrl+N切换，[|]表示直接显示
 let g:winManagerWidth=30
 map <silent> <leader>wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
+
+"------------------------------------------------------
+" OmniCppComplete配置
+"------------------------------------------------------
+let OmniCpp_ShowPrototypeInAbbr=1 " 显示函数参数列表
+let OmniCpp_NamespaceSearch=1
+let OmniCpp_GlobalScopeSearch=1
+let OmniCpp_ShowAccess=1
+let OmniCpp_MayCompleteDot=1   " 输入 .  后自动补全
+let OmniCpp_MayCompleteArrow=1 " 输入 -> 后自动补全
+let OmniCpp_MayCompleteScope=1 " 输入 :: 后自动补全
+"let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
+set completeopt=menu " omnicppcomplete变量预览窗口
