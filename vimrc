@@ -49,3 +49,10 @@ endfunction
 function! NERDTree_IsValid()
     return 1
 endfunction
+
+"------------------------------------------------------
+"	winManager配置
+"------------------------------------------------------
+let g:winManagerWindowLayout='NERDTree|TagList' ",BufExplorer [,]表示通过Ctrl+N切换，[|]表示直接显示
+let g:winManagerWidth=30
+map <silent> <leader>wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
