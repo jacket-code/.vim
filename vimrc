@@ -29,6 +29,15 @@ set nocompatible                " 不使用vi兼容的模式
 autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加载
 
 "------------------------------------------------------
+" Ctags配置与快捷键
+"------------------------------------------------------
+set tags+=~/.vim/tags/stl
+set tags+=~/.vim/tags/gl
+
+noremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>      
+inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
+
+"------------------------------------------------------
 " 向上或下移动一行或多行
 "------------------------------------------------------
 nnoremap <A-j> :m .+1<CR>==
@@ -75,7 +84,7 @@ let OmniCpp_ShowAccess=1
 let OmniCpp_MayCompleteDot=1   " 输入 .  后自动补全
 let OmniCpp_MayCompleteArrow=1 " 输入 -> 后自动补全
 let OmniCpp_MayCompleteScope=1 " 输入 :: 后自动补全
-"let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
+let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
 set completeopt=menu " omnicppcomplete变量预览窗口
 
 "-----------------------------------------------------
