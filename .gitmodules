@@ -34,3 +34,6 @@
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/cscope"]
+	path = bundle/cscope
+	url = https://github.com/vim-scripts/cscope_macros.vim.git
