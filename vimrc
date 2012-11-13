@@ -18,14 +18,16 @@ set showmatch                   " 显示括号配对情况
 set hlsearch                    " 开启高亮显示结果
 set incsearch                   " 开启实时搜索功能
 set nowrapscan                  " 搜索到文件两端时不重新搜索
-"set cursorline                 " 突出显示当前行
 set hidden                      " 允许在有未保存的修改时切换缓冲区
+set nobackup                    " 设置无备份文件
+set nocompatible                " 不使用vi兼容的模式
+set clipboard=unnamedplus       " 使用系统的复制粘贴
+"set cursorline                 " 突出显示当前行
 "set list                       " 显示Tab符，使用一高亮竖线代替
+
 syntax enable                   " 打开语法高亮
 syntax on                       " 开启文件类型侦测
 filetype plugin indent on       " 针对不同的文件类型加载对应的插件
-set nobackup                    " 设置无备份文件
-set nocompatible                " 不使用vi兼容的模式
 autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加载
 
 "------------------------------------------------------
@@ -36,6 +38,12 @@ set tags+=~/.vim/tags/gl
 
 nnoremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
 inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+"------------------------------------------------------
+" cscope快捷键
+"------------------------------------------------------
+nnoremap <F11> :!find . -name '*.h' -o -name '*.c' -o -name '*.cpp' > cscope.files<CR>:!cscope -b<CR>:cs add cscope.out .<CR>
+inoremap <F11> <Esc>:!find . -name '*.h' -o -name '*.c' -o -name '*.cpp' > cscope.files<CR>:!cscope -b<CR>:cs add cscope.out .<CR>
 
 "------------------------------------------------------
 " 向上或下移动一行或多行
