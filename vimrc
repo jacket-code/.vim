@@ -34,8 +34,8 @@ autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加
 set tags+=~/.vim/tags/stl
 set tags+=~/.vim/tags/gl
 
-noremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>      
-inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
+nnoremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
+inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "------------------------------------------------------
 " 向上或下移动一行或多行
@@ -72,7 +72,7 @@ let TList_Exit_OnlyWindow=1 " 当taglist是最后一个分割窗口时，自动�
 "------------------------------------------------------
 let g:winManagerWindowLayout='NERDTree|TagList' ",BufExplorer [,]表示通过Ctrl+N切换，[|]表示直接显示
 let g:winManagerWidth=30
-map <silent> <leader>wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
+noremap <silent> <leader>wm :if IsWinManagerVisible() <BAR> WMToggle<CR> <BAR> else <BAR> WMToggle<CR>:q<CR> endif <CR><CR>
 
 "------------------------------------------------------
 " OmniCppComplete配置
@@ -98,3 +98,16 @@ set completeopt=menu " omnicppcomplete变量预览窗口
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:DoxygenToolkit_authorName="林国锋（linguofeng@uuzz.com）" 
 let g:DoxygenToolkit_licenseTag="Copyright (c) 2012-2013,壹平台客户端 All rights reserved."
+
+"----------------------------------------------------
+" minibufexpl配置
+"----------------------------------------------------
+nnoremap <F3> :TMiniBufExplorer<CR>
+inoremap <F3> <Esc>:TMiniBufExplorer<CR>
+
+"---------------------------------------------------
+" fuzzyfinder配置
+"---------------------------------------------------
+nnoremap <F2> :FufFile<CR>
+inoremap <F2> <Esc>:FufFile<CR>
+nnoremap <silent> <leader>find :FufFile<CR>
