@@ -71,9 +71,9 @@ endfunction
 "	taglist配置
 "------------------------------------------------------
 "map <F3> :silent! TlistToggle<CR> " 按下F3就可以呼出了，已经使用winManager整合
-let Tlist_Ctags_Cmd='/usr/bin/ctags'
-let Tlist_Show_One_File=1
-let TList_Exit_OnlyWindow=1 " 当taglist是最后一个分割窗口时，自动退出vim
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 1
+"let TList_Exit_OnlyWindow = 1 " 当taglist是最后一个分割窗口时，自动退出vim
 
 "------------------------------------------------------
 "	winManager配置
@@ -119,3 +119,10 @@ inoremap <F3> <Esc>:TMiniBufExplorer<CR>
 nnoremap <F2> :FufFile<CR>
 inoremap <F2> <Esc>:FufFile<CR>
 nnoremap <silent> <leader>find :FufFile<CR>
+
+"---------------------------------------------------
+" cmake配置
+"---------------------------------------------------
+:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! ~/.vim/bundle/cmake/indent/cmake-indent.vim
+:autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
+:autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
