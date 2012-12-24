@@ -36,8 +36,8 @@ autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加
 set tags+=~/.vim/tags/stl
 set tags+=~/.vim/tags/gl
 
-nnoremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
-inoremap <F12> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nnoremap <F4> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
+inoremap <F4> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "------------------------------------------------------
 " cscope快捷键
@@ -58,7 +58,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "------------------------------------------------------
 "	NERDTree配置
 "------------------------------------------------------
-"map <silent> <F4> :NERDTreeToggle<CR> "按下F4打开文件浏览器，已经使用winManager整合
+nnoremap <silent> <F4> :NERDTreeToggle<CR> "按下F4打开文件浏览器，已经使用winManager整合
 let g:NERDTree_title="[NERD Tree]"
 function! NERDTree_Start()
     exec 'NERDTree'
@@ -71,7 +71,7 @@ endfunction
 "	taglist配置
 "------------------------------------------------------
 "map <F3> :silent! TlistToggle<CR> " 按下F3就可以呼出了，已经使用winManager整合
-let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1
 "let TList_Exit_OnlyWindow = 1 " 当taglist是最后一个分割窗口时，自动退出vim
 
@@ -126,3 +126,8 @@ nnoremap <silent> <leader>find :FufFile<CR>
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in runtime! ~/.vim/bundle/cmake/indent/cmake-indent.vim
 :autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in setf cmake
 :autocmd BufRead,BufNewFile *.ctest,*.ctest.in setf cmake
+
+"---------------------------------------------------
+" powerline配置
+"---------------------------------------------------
+let g:Powerline_symbols='unicode'
