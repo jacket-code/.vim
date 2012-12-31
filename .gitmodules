@@ -58,3 +58,6 @@
 	path = bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
     ignore = untracked
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
