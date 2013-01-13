@@ -1,7 +1,9 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-color freya                     " 配色
+set runtimepath^=~/.vim/bundle/ctrlp
+
+color wombat256mod              " 配色
 
 set guioptions-=T               " 删除工具栏
 set tabstop=4                   " 设置tab键的宽度
@@ -21,23 +23,30 @@ set nowrapscan                  " 搜索到文件两端时不重新搜索
 set hidden                      " 允许在有未保存的修改时切换缓冲区
 set nobackup                    " 设置无备份文件
 set nocompatible                " 不使用vi兼容的模式
-set clipboard=unnamedplus       " 使用系统的复制粘贴
-"set cursorline                 " 突出显示当前行
-"set list                       " 显示Tab符，使用一高亮竖线代替
+"set clipboard=unnamed          " 使用系统的复制粘贴
+if has('unnamedplus')
+  set clipboard=unnamedplus     " Linux
+else
+  set clipboard=unnamed         " MacOS
+endif
+set cursorline                 " 突出显示当前行
 
 syntax enable                   " 打开语法高亮
 syntax on                       " 开启文件类型侦测
+filetype on
+filetype indent on
 filetype plugin indent on       " 针对不同的文件类型加载对应的插件
 autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加载
 
 "------------------------------------------------------
 " Ctags配置与快捷键
 "------------------------------------------------------
-set tags+=~/.vim/tags/stl
+set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/gl
+set tags+=tags
 
-nnoremap <F4> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
-inoremap <F4> <Esc>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nnoremap <F9> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
+inoremap <F9> <Esc>:!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "------------------------------------------------------
 " cscope快捷键
@@ -59,6 +68,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "	NERDTree配置
 "------------------------------------------------------
 nnoremap <silent> <F4> :NERDTreeToggle<CR> "按下F4打开文件浏览器，已经使用winManager整合
+nnoremap <silent> <leader>t :NERDTreeToggle<CR> "按下\t快捷键
 let g:NERDTree_title="[NERD Tree]"
 function! NERDTree_Start()
     exec 'NERDTree'
@@ -73,7 +83,8 @@ endfunction
 "map <F3> :silent! TlistToggle<CR> " 按下F3就可以呼出了，已经使用winManager整合
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1
-"let TList_Exit_OnlyWindow = 1 " 当taglist是最后一个分割窗口时，自动退出vim
+let TList_Exit_OnlyWindow = 1 " 当taglist是最后一个分割窗口时，自动退出vim
+let Tlist_Use_Right_Window = 1
 
 "------------------------------------------------------
 "	winManager配置
