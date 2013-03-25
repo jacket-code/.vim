@@ -7,8 +7,8 @@ color wombat256mod              " 配色
 
 set guioptions-=T               " 删除工具栏
 set tabstop=4                   " 设置tab键的宽度
-set expandtab                   " 空格代替tab
 set shiftwidth=4                " 换行时行间交错使用4个空格
+set expandtab                   " 空格代替tab
 set autoindent                  " 自动对齐
 set backspace=2                 " 设置退格键可用
 set cindent shiftwidth=4        " 自动缩进4空格
@@ -35,7 +35,7 @@ syntax enable                   " 打开语法高亮
 syntax on                       " 开启文件类型侦测
 filetype on
 filetype indent on
-filetype plugin indent on       " 针对不同的文件类型加载对应的插件
+filetype plugin on              " 针对不同的文件类型加载对应的插件
 autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加载
 
 "------------------------------------------------------
