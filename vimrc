@@ -141,4 +141,4 @@ nnoremap <silent> <leader>find :FufFile<CR>
 "---------------------------------------------------
 " powerline配置
 "---------------------------------------------------
-let g:Powerline_symbols='unicode'
+let g:Powerline_symbols='fancy'
