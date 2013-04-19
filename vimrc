@@ -67,7 +67,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "------------------------------------------------------
 "	NERDTree配置
 "------------------------------------------------------
-nnoremap <silent> <F4> :NERDTreeToggle<CR> "按下F4打开文件浏览器，已经使用winManager整合
+"nnoremap <silent> <F4> :NERDTreeToggle<CR> "按下F4打开文件浏览器，已经使用winManager整合
 nnoremap <silent> <leader>t :NERDTreeToggle<CR> "按下\t快捷键
 let g:NERDTree_title="[NERD Tree]"
 function! NERDTree_Start()
@@ -81,6 +81,7 @@ endfunction
 "	taglist配置
 "------------------------------------------------------
 "map <F3> :silent! TlistToggle<CR> " 按下F3就可以呼出了，已经使用winManager整合
+nnoremap <silent> <leader>l :TlistToggle<CR> "按下\t快捷键
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1
 let TList_Exit_OnlyWindow = 1 " 当taglist是最后一个分割窗口时，自动退出vim
@@ -121,8 +122,9 @@ let g:DoxygenToolkit_licenseTag="Copyright (c) 2012-2013,壹平台客户端 All 
 "----------------------------------------------------
 " minibufexpl配置
 "----------------------------------------------------
-nnoremap <F3> :TMiniBufExplorer<CR>
-inoremap <F3> <Esc>:TMiniBufExplorer<CR>
+"nnoremap <F3> :TMiniBufExplorer<CR>
+"inoremap <F3> <Esc>:TMiniBufExplorer<CR>
+nnoremap <silent> <leader>b :TMiniBufExplorer<CR>
 
 "---------------------------------------------------
 " fuzzyfinder配置

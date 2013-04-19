@@ -12,7 +12,7 @@
     ignore = untracked
 [submodule "bundle/taglist"]
     path = bundle/taglist
-    url = https://github.com/vim-scripts/taglist.vim.git
+    url = https://github.com/linguofeng/taglist.vim.git
     ignore = untracked
 [submodule "bundle/minibufexpl"]
     path = bundle/minibufexpl
