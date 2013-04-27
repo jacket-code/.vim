@@ -37,6 +37,7 @@ filetype on
 filetype indent on
 filetype plugin on              " 针对不同的文件类型加载对应的插件
 autocmd! bufwritepost .vimrc source ~/.vimrc    " 保存.vimrc文件后自动加载
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 "------------------------------------------------------
 " Ctags配置与快捷键
