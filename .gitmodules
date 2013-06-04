@@ -74,3 +74,9 @@
     path = bundle/ctrlp
     url = https://github.com/kien/ctrlp.vim.git
     ignore = untracked
+[submodule "bundle/matrix"]
+	path = bundle/matrix
+	url = https://github.com/uguu-org/vim-matrix-screensaver.git
+[submodule "bundle/haskellmode"]
+	path = bundle/haskellmode
+	url = git://github.com/lukerandall/haskellmode-vim.git

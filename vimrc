@@ -145,3 +145,9 @@ nnoremap <silent> <leader>find :FufFile<CR>
 " powerline配置
 "---------------------------------------------------
 let g:Powerline_symbols='fancy'
+
+"---------------------------------------------------
+" haskell配置
+"---------------------------------------------------
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
