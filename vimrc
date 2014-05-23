@@ -43,7 +43,8 @@ autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 " Ctags配置与快捷键
 "------------------------------------------------------
 set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
+set tags+=~/.vim/tags/opencv
+set tags+=~/.vim/tags/opencv2
 set tags+=tags
 
 nnoremap <F9> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>      
